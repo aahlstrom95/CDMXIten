@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Lindsay & Friend's 🔥🔥 CDMX Itinerary</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:#120720;--surface:#1B0C32;--card:#22113F;--card2:#2A1650;
+  --pink:#FF2D8B;--pink-s:rgba(255,45,139,0.12);
+  --orange:#FF7E00;--orange-s:rgba(255,126,0,0.12);
+  --gold:#FFD000;--gold-s:rgba(255,208,0,0.12);
+  --purple:#C077FF;--purple-s:rgba(192,119,255,0.1);
+  --cyan:#00DDB4;--cyan-s:rgba(0,221,180,0.1);
+  --red:#FF2D64;
+  --text:#F0E4FF;--muted:#8E7FAD;--border:rgba(255,255,255,0.07);
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Plus Jakarta Sans',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* PAPEL PICADO */
+.papel{height:7px;background:repeating-linear-gradient(90deg,#FF2D8B 0 18px,#FF7E00 18px 36px,#FFD000 36px 54px,#C077FF 54px 72px,#00DDB4 72px 90px,#FF2D8B 90px 108px)}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 0 52px;background:radial-gradient(ellipse 90% 70% at 20% 15%,rgba(192,119,255,0.22) 0%,transparent 55%),radial-gradient(ellipse 70% 55% at 80% 70%,rgba(255,45,139,0.16) 0%,transparent 50%),var(--bg)}
+.hero-deco{position:absolute;top:36px;left:20px;font-size:26px;letter-spacing:10px;opacity:.35;pointer-events:none}
+.hero-inner{position:relative;padding:0 22px}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:var(--pink-s);border:1px solid rgba(255,45,139,0.3);border-radius:100px;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--pink);margin-bottom:16px}
+.hero h1{font-family:var(--serif);font-size:clamp(38px,11vw,68px);font-weight:900;line-height:.98;color:var(--text);margin-bottom:8px}
+.hero h1 em{font-style:italic;color:var(--pink)}
+.hero h1 .g{color:var(--gold)}
+.hero-sub{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--purple);margin-bottom:22px}
+.hero-dates{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:28px}
+.pills{display:flex;gap:8px;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;gap:5px;padding:8px 15px;border-radius:100px;font-size:12px;font-weight:700;text-decoration:none;transition:transform .15s;font-family:var(--sans);cursor:pointer;border:none}
+.pill:active{transform:scale(.95)}
+.p-pink{background:var(--pink-s);color:var(--pink);border:1px solid rgba(255,45,139,.3)}
+.p-ghost{background:transparent;color:var(--muted);border:1px solid var(--border)}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(18,7,32,.93);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav-inner{display:flex;padding:0 14px;white-space:nowrap}
+.na{padding:13px 14px;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);text-decoration:none;border-bottom:2px solid transparent;transition:all .2s;font-family:var(--sans)}
+.na.on{color:var(--pink);border-bottom-color:var(--pink)}
+
+/* ── EVENTS SECTION — completely different aesthetic ── */
+#events{background:linear-gradient(180deg,#1C0800 0%,#100400 100%);border-top:3px solid var(--orange);border-bottom:3px solid var(--orange);padding:36px 0 30px}
+.ev-eyebrow{padding:0 20px;margin-bottom:16px}
+.ev-badge{display:inline-flex;align-items:center;gap:7px;padding:6px 14px;background:var(--orange);color:#1C0800;font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;border-radius:100px}
+.ev-title{font-family:var(--serif);font-size:28px;font-weight:900;color:var(--gold);padding:0 20px;margin-bottom:6px;line-height:1.1}
+.ev-sub{font-size:13px;color:#AA6A30;padding:0 20px;margin-bottom:22px}
+.ev-list{display:flex;flex-direction:column;gap:10px;padding:0 16px}
+.ev-card{background:rgba(255,126,0,.07);border:1px solid rgba(255,126,0,.2);border-radius:14px;padding:16px;display:flex;gap:14px}
+.ev-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:4px}
+.ev-date{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--orange);margin-bottom:3px}
+.ev-name{font-size:14px;font-weight:700;color:#FFE4C0;margin-bottom:3px}
+.ev-desc{font-size:12px;color:#9A6540;line-height:1.5}
+.ev-desc strong{color:#FFD0A0;font-weight:600}
+
+/* ── DAY SECTIONS ── */
+.day-sec{padding:40px 0 24px}
+.day-head{padding:0 20px 22px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:5px 13px;border-radius:100px;font-size:10px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;margin-bottom:10px}
+.ch-pink{background:var(--pink-s);color:var(--pink);border:1px solid rgba(255,45,139,.25)}
+.ch-orange{background:var(--orange-s);color:var(--orange);border:1px solid rgba(255,126,0,.25)}
+.ch-cyan{background:var(--cyan-s);color:var(--cyan);border:1px solid rgba(0,221,180,.25)}
+.day-h2{font-family:var(--serif);font-size:34px;font-weight:900;line-height:1.05;color:var(--text);margin-bottom:6px}
+.day-h2 em{font-style:italic}
+.day-tag{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--muted)}
+
+
+
+/* TIMELINE */
+.tl{padding:0 16px;display:flex;flex-direction:column;gap:2px}
+.tb{display:flex}
+.tb-l{width:68px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;padding-top:18px}
+.tb-time{font-size:10px;font-weight:700;color:var(--muted);text-align:center;line-height:1.2}
+.tb-dot{width:10px;height:10px;border-radius:50%;background:var(--card);border:2px solid;flex-shrink:0;margin-top:8px;z-index:1}
+.tb-line{width:1px;flex:1;background:var(--border);margin-top:4px}
+.tb:last-child .tb-line{display:none}
+.tb-card{flex:1;background:var(--card);border-radius:14px;margin:6px 0 6px 10px;padding:15px;border:1px solid var(--border);min-width:0}
+.tb-row{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:5px}
+.tb-title{font-size:14px;font-weight:700;color:var(--text)}
+.tb-title a{color:var(--text);text-decoration:none}
+.tb-body{font-size:13px;color:var(--muted);line-height:1.55}
+.tb-body strong{color:var(--text);font-weight:600}
+.tb-body a{color:var(--muted);text-decoration:underline;text-decoration-color:rgba(255,255,255,.2)}
+.mb{display:inline-flex;align-items:center;gap:4px;padding:4px 9px;border-radius:7px;font-size:11px;font-weight:700;text-decoration:none!important;border:1px solid;white-space:nowrap;flex-shrink:0;transition:transform .15s;font-family:var(--sans);margin-top:1px}
+.mb:active{transform:scale(.94)}
+.mb-p{background:var(--pink-s);color:var(--pink)!important;border-color:rgba(255,45,139,.3)}
+.mb-o{background:var(--orange-s);color:var(--orange)!important;border-color:rgba(255,126,0,.3)}
+.mb-c{background:var(--cyan-s);color:var(--cyan)!important;border-color:rgba(0,221,180,.25)}
+
+/* CALLOUTS */
+.co{margin:10px 16px;border-radius:14px;padding:14px 16px;border-left:3px solid}
+.co-warn{background:rgba(255,45,100,.09);border-color:var(--red)}
+.co-info{background:rgba(0,221,180,.07);border-color:var(--cyan)}
+.co-gold{background:var(--gold-s);border-color:var(--gold)}
+.co-purple{background:var(--purple-s);border-color:var(--purple)}
+.co-tag{font-size:10px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;margin-bottom:7px}
+.co-warn .co-tag{color:var(--red)}
+.co-info .co-tag{color:var(--cyan)}
+.co-gold .co-tag{color:var(--gold)}
+.co-purple .co-tag{color:var(--purple)}
+.co p{font-size:13px;color:var(--muted);line-height:1.55}
+.co p+p{margin-top:6px}
+.co p strong,.co li strong{color:var(--text);font-weight:600}
+.co ul{list-style:none;margin-top:8px;display:flex;flex-direction:column;gap:6px}
+.co ul li{font-size:13px;color:var(--muted);padding-left:16px;position:relative;line-height:1.5}
+.co-warn ul li::before,.co-warn p a{color:var(--red)}
+.co-info ul li::before{color:var(--cyan)}
+.co-gold ul li::before{color:var(--gold)}
+.co-purple ul li::before{color:var(--purple)}
+.co ul li::before{content:'→';position:absolute;left:0;font-size:11px;top:2px}
+.co a{color:inherit}
+
+/* CHOOSE YOUR VIBE */
+.vibe-row{display:flex;gap:10px;padding:12px 16px 0}
+.vc{flex:1;background:var(--card);border-radius:14px;padding:16px;border:1px solid var(--border);text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:4px;transition:transform .15s}
+.vc:active{transform:scale(.97)}
+.vc-icon{font-size:24px;margin-bottom:4px}
+.vc-tag{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.vc-title{font-size:14px;font-weight:700;color:var(--text)}
+.vc-desc{font-size:12px;color:var(--muted);line-height:1.45}
+.vc-desc strong{color:var(--text);font-weight:600}
+.vc-link{font-size:11px;font-weight:700;margin-top:4px}
+
+/* DIVIDER */
+.sdiv{height:1px;background:var(--border);margin:32px 20px}
+
+/* OPTIONAL */
+.opt-sec{padding:40px 0}
+.sec-h{padding:0 20px 20px}
+.sec-label{font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);margin-bottom:6px}
+.sec-h h2{font-family:var(--serif);font-size:28px;font-weight:900;color:var(--text)}
+.opt-list{display:flex;flex-direction:column;gap:12px;padding:0 16px}
+.opt-card{background:var(--card);border-radius:16px;padding:20px;border:1px solid var(--border)}
+.opt-icon{font-size:26px;margin-bottom:10px}
+.opt-title{font-family:var(--serif);font-size:22px;font-weight:900;color:var(--text);margin-bottom:4px}
+.opt-sub{font-size:12px;font-weight:700;color:var(--cyan);letter-spacing:.06em;margin-bottom:10px}
+.opt-body{font-size:13px;color:var(--muted);line-height:1.6}
+.opt-body strong{color:var(--text);font-weight:600}
+.opt-tag{display:inline-block;margin-top:12px;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;background:var(--gold-s);color:var(--gold);border:1px solid rgba(255,208,0,.2)}
+
+/* ACCORDION */
+.acc-sec{padding:40px 0;background:rgba(255,255,255,.015)}
+.acc-list{padding:0 16px;display:flex;flex-direction:column;gap:3px}
+.acc-item{background:var(--card);border-radius:13px;overflow:hidden;border:1px solid var(--border)}
+.acc-btn{width:100%;display:flex;align-items:center;justify-content:space-between;padding:16px 17px;background:none;border:none;cursor:pointer;text-align:left;gap:12px;font-family:var(--sans)}
+.acc-bl{display:flex;align-items:center;gap:11px}
+.acc-ico{font-size:17px;flex-shrink:0}
+.acc-title{font-size:14px;font-weight:700;color:var(--text)}
+.acc-chev{color:var(--muted);transition:transform .25s;font-size:13px;flex-shrink:0}
+.acc-item.open .acc-chev{transform:rotate(180deg)}
+.acc-body{display:none;padding:0 17px 17px}
+.acc-item.open .acc-body{display:block}
+.acc-body ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.acc-body ul li{font-size:13px;color:var(--muted);padding-left:18px;position:relative;line-height:1.55}
+.acc-body ul li::before{content:'🌸';position:absolute;left:0;font-size:11px;top:1px}
+.acc-body ul li strong{color:var(--text);font-weight:600}
+.acc-body p{font-size:13px;color:var(--muted);line-height:1.6}
+.phrases{display:flex;flex-direction:column;gap:6px}
+.phrase{display:flex;gap:10px;padding:9px 12px;background:rgba(255,255,255,.03);border-radius:8px}
+.ph-es{font-size:13px;font-weight:700;color:var(--pink);min-width:155px;flex-shrink:0}
+.ph-en{font-size:13px;color:var(--muted)}
+
+/* BOOKING */
+.bk-sec{padding:40px 0 60px}
+.bk-list{padding:0 16px;display:flex;flex-direction:column;gap:10px}
+.bk-card{background:var(--card);border-radius:14px;padding:17px;border:1px solid var(--border);display:flex;align-items:center;gap:15px;text-decoration:none;transition:transform .15s}
+.bk-card:active{transform:scale(.98)}
+.bk-ico{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.bi-p{background:var(--pink-s)}
+.bi-o{background:var(--orange-s)}
+.bi-g{background:var(--gold-s)}
+.bi-c{background:var(--cyan-s)}
+.bi-pu{background:var(--purple-s)}
+.bk-info{flex:1;min-width:0}
+.bk-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:2px}
+.bk-desc{font-size:12px;color:var(--muted);line-height:1.4}
+.bk-arr{color:var(--muted);font-size:16px;flex-shrink:0}
+
+/* LODGING */
+.lodge-sec{padding:40px 0}
+.lodge-list{padding:0 16px;display:flex;flex-direction:column;gap:12px}
+.lodge-card{background:var(--card);border-radius:16px;padding:20px;border:1px solid var(--border)}
+.lodge-tag{font-size:10px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;margin-bottom:8px}
+.lt-rec{color:var(--gold)}
+.lt-alt{color:var(--purple)}
+.lodge-name{font-family:var(--serif);font-size:20px;font-weight:900;color:var(--text);margin-bottom:4px}
+.lodge-addr{font-size:12px;color:var(--muted);margin-bottom:10px;line-height:1.4}
+.lodge-body{font-size:13px;color:var(--muted);line-height:1.6}
+.lodge-body strong{color:var(--text);font-weight:600}
+.lodge-map{display:inline-flex;align-items:center;gap:5px;margin-top:12px;padding:6px 14px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;border:1px solid;transition:transform .15s}
+.lodge-map:active{transform:scale(.96)}
+.lm-gold{background:var(--gold-s);color:var(--gold);border-color:rgba(255,208,0,.25)}
+.lm-pu{background:var(--purple-s);color:var(--purple);border-color:rgba(192,119,255,.2)}
+footer{padding:28px 20px 52px;text-align:center;border-top:1px solid var(--border)}
+.ft-title{font-family:var(--serif);font-size:26px;font-style:italic;color:var(--pink);margin-bottom:8px}
+.ft-sub{font-size:12px;color:var(--muted)}
+
+a{color:inherit}
+</style>
+</head>
+<body>
+<div class="papel"></div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-deco">💀🌺🕯️🌼🦋</div>
+  <div class="hero-inner">
+    <div class="hero-badge">✈️ Oct 30 – Nov 2 · 4 Days</div>
+    <h1>Lindsay<br><em>&amp; Friend's</em><br><span class="g">CDMX Trip</span> 🔥🔥</h1>
+    <div class="hero-sub">Día de los Muertos Edition ☠️🌺</div>
+    <div class="hero-dates">October 30 – November 2</div>
+    <div class="pills">
+      <a href="#events" class="pill p-pink">🎉 DdlM Events</a>
+      <a href="#day1" class="pill p-ghost">Night 1</a>
+      <a href="#day2" class="pill p-ghost">Big Day</a>
+      <a href="#day3" class="pill p-ghost">Chill Day</a>
+      <a href="#lodging" class="pill p-ghost">Lodging</a>
+      <a href="#booking" class="pill p-ghost">Book it</a>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#events" class="na">🌺 Events</a>
+    <a href="#day1" class="na">Fri Oct 30</a>
+    <a href="#day2" class="na">Sat Oct 31</a>
+    <a href="#day3" class="na">Sun Nov 1</a>
+    <a href="#optional" class="na">Add-ons</a>
+    <a href="#notes" class="na">Tips</a>
+    <a href="#lodging" class="na">Lodging</a>
+    <a href="#booking" class="na">Booking</a>
+  </div>
+</nav>
+
+<!-- ═══ DdlM EVENTS — own aesthetic ═══ -->
+<section id="events">
+  <div class="ev-eyebrow">
+    <span class="ev-badge">🎭 Confirmed DdlM Events · Your Dates</span>
+  </div>
+  <div class="ev-title">You're arriving during<br>the best week of the year ☠️</div>
+  <div class="ev-sub">the entire city transforms for Día de los Muertos — here's what's confirmed while you're there</div>
+  <div class="ev-list">
+    <div class="ev-card">
+      <div class="ev-dot" style="background:#FF7E00"></div>
+      <div>
+        <div class="ev-date">Oct 25 – Nov 2 · All Day · 🆓 Free</div>
+        <div class="ev-name">Mega Ofrenda at the Zócalo 🕯️</div>
+        <div class="ev-desc">The entire main square becomes one giant altar — marigolds, candles, papel picado, massive cultural installations. The city's most iconic DdlM display. Open day &amp; night throughout your whole trip.</div>
+      </div>
+    </div>
+    <div class="ev-card">
+      <div class="ev-dot" style="background:#FF2D8B"></div>
+      <div>
+        <div class="ev-date">Sat Oct 31 · ~2–7 PM · 🆓 Free (est.)</div>
+        <div class="ev-name">Gran Desfile de Día de Muertos 🎭✨</div>
+        <div class="ev-desc">THE parade. Giant Catrinas, floats, full bands, 4+ hours of spectacle down Reforma. <strong>⚠️ Road closures will mess with Uber all afternoon</strong> — plan to be on foot near Reforma to watch it, then Uber after ~7 PM. Exact date confirmed ~2 wks prior by CDMX govt.</div>
+      </div>
+    </div>
+    <div class="ev-card">
+      <div class="ev-dot" style="background:#C077FF"></div>
+      <div>
+        <div class="ev-date">Oct 3 – Nov 9 · ~4 PM Showtime · 🎟️ Ticketed</div>
+        <div class="ev-name">La Llorona — Xochimilco Canal Show 🌊👻</div>
+        <div class="ev-desc">Haunting theatrical performance of the La Llorona legend staged on the canals at sunset. Way more atmospheric than a regular trajinera ride. Heard this is underwhelming tourist trap, but may still be fun.</div>
+      </div>
+    </div>
+    <div class="ev-card">
+      <div class="ev-dot" style="background:#FFD000"></div>
+      <div>
+        <div class="ev-date">Through Nov 9 · Along Reforma · 🆓 Free</div>
+        <div class="ev-name">Monumental Alebrijes on Display 🦋🐉</div>
+        <div class="ev-desc">Giant fantastical painted creature sculptures all along Paseo de la Reforma between the Angel and Calle Lieja. You'll walk right past them on Day 3. The photo opportunities are genuinely spectacular. 📸</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DAY 1 ═══ -->
+<section class="day-sec" id="day1">
+  <div class="sdiv"></div>
+  <div class="day-head">
+    <div class="chip ch-pink">🌙 Day 1 · Friday, October 30</div>
+    <h2 class="day-h2">Arrive &amp; Hit<br><em style="color:var(--pink)">Coyoacán</em> 🌺</h2>
+    <div class="day-tag">first night in the city ✨ iconic neighborhood ✨ tacos immediately</div>
+  </div>
+
+  <div class="co co-warn">
+    <div class="co-tag">✈️ Airport Transfer — Read This First!!</div>
+    <p><strong>Use only authorized taxis like Sitio 300 from taxi booth inside the terminal.</strong> Unlicensed drivers wait outside — do not engage. Pay at the counter before going out. Uber has a pickup zone if necessary, but is not advised as taxi drivers hate the Uber drivers — the official taxi is your safest move on arrival.</p>
+    <p><strong>Rest of the trip:</strong> Uber works great everywhere else. Use it freely ✌️ If you must use a taxi, pull one that looks legit (clean, has a meter, etc.)Be weary of personal/ itenerary conversation in taxis.</p>
+  </div>
+
+
+  <div class="tl">
+    <div class="tb">
+      <div class="tb-l"><div class="tb-time">Night</div><div class="tb-dot" style="border-color:var(--pink)"></div><div class="tb-line"></div></div>
+      <div class="tb-card">
+        <div class="tb-row"><div class="tb-title">Land at AICM ✈️</div><a href="https://maps.google.com/?q=AICM+Mexico+City+Airport" target="_blank" class="mb mb-p">📍 Map</a></div>
+        <div class="tb-body">Official Sitio 300 taxi to your hotel. The neighborhood is ~20–30 min south of the airport.</div>
+      </div>
+    </div>
+    <div class="tb">
+      <div class="tb-l"><div class="tb-time">9–10 PM</div><div class="tb-dot" style="border-color:var(--pink)"></div><div class="tb-line"></div></div>
+      <div class="tb-card">
+        <div class="tb-row"><div class="tb-title">Plaza Coyoacán 🌺</div><a href="https://maps.google.com/?cid=6989077076721063324" target="_blank" class="mb mb-p">📍 Map</a></div>
+        <div class="tb-body">Drop bags and head straight here. By late October the DdlM atmosphere is already building — costumed crowds, marigold vendors, live music everywhere.</div>
+      </div>
+    </div>
+    <div class="tb">
+      <div class="tb-l"><div class="tb-time">10 PM+</div><div class="tb-dot" style="border-color:var(--pink)"></div><div class="tb-line"></div></div>
+      <div class="tb-card">
+        <div class="tb-row"><div class="tb-title">Jardín Centenario + Eat 🌮</div><a href="https://maps.google.com/?q=Jardin+Centenario+Coyoacan" target="_blank" class="mb mb-p">📍 Map</a></div>
+        <div class="tb-body">The adjacent park with the iconic coyote fountain — local musicians often set up here at night. Grab tacos from any street cart with a line of locals. <strong>That's your quality signal in CDMX, always.</strong> Try tacos de canasta or quesadillas with huitlacoche if you see them 🤌</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:14px 16px 0">
+    <div style="font-size:12px;font-weight:700;color:var(--purple);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px">✨ Friday evening or another time — choose your museum:</div>
+  </div>
+  <div class="vibe-row">
+    <a href="https://www.museofridakahlo.org.mx/" target="_blank" class="vc" style="border-color:rgba(255,45,139,.2)">
+      <div class="vc-icon">🎨</div>
+      <div class="vc-tag" style="color:var(--pink)">The Classic</div>
+      <div class="vc-title">Frida Kahlo Museum</div>
+      <div class="vc-desc">La Casa Azul — where Frida was born and died. Her actual bedroom, iconic art, the DdlM ofrenda recreated inside. <strong>Sells out weeks ahead</strong> — book online before you go.</div>
+      <div class="vc-link" style="color:var(--pink)">Book tickets ↗</div>
+    </a>
+    <a href="https://www.inah.gob.mx/zonas/145-museo-casa-de-leon-trotsky" target="_blank" class="vc" style="border-color:rgba(192,119,255,.2)">
+      <div class="vc-icon">🔴</div>
+      <div class="vc-tag" style="color:var(--purple)">Cold War Twist</div>
+      <div class="vc-title">Trotsky's House</div>
+      <div class="vc-desc">Stalin literally sent an assassin here to kill him. The bullet holes are still in the walls. His desk is untouched exactly as he left it. Wild, weird, and criminally underrated, and ties into the history of Frida Haklo and Diego Rivera.</div>
+      <div class="vc-link" style="color:var(--purple)">More info ↗</div>
+    </a>
+  </div>
+
+  <div class="co co-info" style="margin-top:14px">
+    <div class="co-tag">🏘️ About Coyoacán</div>
+    <ul>
+      <li>One of CDMX's oldest neighborhoods — predates the conquest as an Aztec town. Completely different feel from the centro skyscrapers.</li>
+      <li>Shops and stalls open at <strong>11am</strong> — don't expect morning commerce before then.</li>
+      <li>Both museums are about a 10-minute walk from the plaza. You could do both if time and planning allows.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══ DAY 2 ═══ -->
+<section class="day-sec" id="day2">
+  <div class="sdiv"></div>
+  <div class="day-head">
+    <div class="chip ch-orange">💀 Day 2 · Saturday, October 31</div>
+    <h2 class="day-h2"><em style="color:var(--orange)">The Main</em><br>Event 🎭🌼</h2>
+    <div class="day-tag">historic center, the parade of a lifetime, and canals at night</div>
+  </div>
+
+  <div class="co co-warn">
+    <div class="co-tag">🎭 Parade Day Alert — Plan Around This!!</div>
+    <p>The <strong>Gran Desfile</strong> runs ~2–7 PM along Reforma. Road closures make Uber basically impossible that afternoon. <strong>Plan to be on foot near Reforma to catch the parade,</strong> then Uber freely after ~7 PM.</p>
+  </div>
+
+
+  <div class="tl">
+    <div class="tb">
+      <div class="tb-l"><div class="tb-time">Morning</div><div class="tb-dot" style="border-color:var(--orange)"></div><div class="tb-line"></div></div>
+      <div class="tb-card">
+        <div class="tb-row"><div class="tb-title">Breakfast at Sanborns ☕</div><a href="https://maps.google.com/?q=Sanborns+Casa+de+los+Azulejos+Madero+Mexico+City" target="_blank" class="mb mb-o">📍 Map</a></div>
+        <div class="tb-body"><strong>Go early — this fills up fast on Saturdays.</strong> <a href="https://en.wikipedia.org/wiki/Casa_de_los_Azulejos" target="_blank">Casa de los Azulejos</a> is a 16th-century palace covered entirely in blue and white Talavera tile. The interior dining room is stunning. Order <strong>chilaquiles verdes</strong> or <strong>huevos rancheros</strong>. 📸</div>
+      </div>
+    </div>
+    <div class="tb">
+      <div class="tb-l"><div class="tb-time">~10 AM</div><div class="tb-dot" style="border-color:var(--orange)"></div><div class="tb-line"></div></div>
+      <div class="tb-card">
+        <div class="tb-row"><div class="tb-title">Zócalo + <a href="https://www.templomayor.inah.gob.mx/" target="_blank">Templo Mayor</a> ⚔️</div><a href="https://maps.google.com/?q=Zocalo+Mexico+City" target="_blank" class="mb mb-o">📍 Map</a></div>
+        <div class="tb-body">The <strong>Mega Ofrenda</strong> will be in full peak gorgeous mode right now. The Zócalo has been the main square of this city <strong>since Aztec times</strong> — you're standing on the center of ancient Tenochtitlán. The Templo Mayor ruins at the NE corner are the actual excavated Aztec temple foundation.
+        <div class="co co-warn" style="margin:10px 0 0;padding:10px 12px">
+          <div class="co-tag" style="font-size:9px">⚠️ Heads Up: Political Protests</div>
+          <p>The President's official residence and numerous government offices face the Zócalo — demonstrations happen occasionally.</p>
+        </div></div>
+      </div>
+    </div>
+    <div class="tb">
+      <div class="tb-l"><div class="tb-time">~11 AM</div><div class="tb-dot" style="border-color:var(--orange)"></div><div class="tb-line"></div></div>
+      <div class="tb-card">
+        <div class="tb-row"><div class="tb-title"><a href="https://palacio.inba.gob.mx/" target="_blank">Palacio de Bellas Artes</a> 🏛️</div><a href="https://maps.google.com/?cid=1718141752200063183" target="_blank" class="mb mb-o">📍 Map</a></div>
+        <div class="tb-body">Opens 11am Saturday. Genuinely one of the most beautiful buildings in the world — Art Nouveau exterior, Art Deco interior. <strong>Go upstairs for Diego Rivera's murals</strong>, especially <em>Man at the Crossroads.</em> Entry ~95 MXN (~$5). Allow 90 min. No food or large bags. 🎒</div>
+      </div>
+    </div>
+    <div class="tb">
+      <div class="tb-l"><div class="tb-time">~Noon</div><div class="tb-dot" style="border-color:var(--orange)"></div><div class="tb-line"></div></div>
+      <div class="tb-card">
+        <div class="tb-row"><div class="tb-title"> Heads Up:Parade Positioning 🎉</div></div>
+        <div class="tb-body">As you explore the city, it will likely be shutting down streets to prepare for the Grand Parade along La Reforma on November 2nd. ✨</div>
+      </div>
+    </div>
+    <div class="tb">
+      <div class="tb-l"><div class="tb-time">~Afternoon</div><div class="tb-dot" style="border-color:var(--orange)"></div><div class="tb-line"></div></div>
+      <div class="tb-card">
+        <div class="tb-row"><div class="tb-title"><a href="https://mexicocity.cdmx.gob.mx/venues/monument-to-the-revolution/" target="_blank">Monumento a la Revolución</a> 🏗️</div><a href="https://maps.google.com/?cid=2377274831848344608" target="_blank" class="mb mb-o">📍 Map</a></div>
+        <div class="tb-body">Walk west or Uber several blocks. Take the elevator to the top for sweeping views over Reforma. Open until 10 PM Saturdays. 🌆 Browse nearby streets for craft goods, silver from Taxco, and embroidered textiles. <strong>Fonart</strong> (the government artisan store) is nearby — fixed prices, no haggling required. There are lots of great restaurants that overlook this plaza as well.</div>
+      </div>
+    </div>
+    <div class="tb">
+      <div class="tb-l"><div class="tb-time">~Evening</div><div class="tb-dot" style="border-color:var(--orange)"></div><div class="tb-line"></div></div>
+      <div class="tb-card">
+        <div class="tb-row"><div class="tb-title">Xochimilco Canals 🛶🍺</div><a href="https://maps.google.com/?q=Embarcadero+Fernando+Celada+Xochimilco" target="_blank" class="mb mb-o">📍 Map</a></div>
+        <div class="tb-body">Secure a driver or dedicated tour bus to take you ~40 Minutes south. Head to <strong>Embarcadero Fernando Celada</strong> or <strong>Nativitas.</strong> <strong>Negotiate the price before you board</strong> — 300–500 MXN/hr per boat is fair, don't accept the first number. Stock up on beers (and gatorades) from floating vendors. When a mariachi boat pulls alongside, pay for a few songs. Saturday nights on the canals are festive and worth every minute. It is very easy to accidentally really drunk here as is everyone is enabling eachother.
+        <br><br>
+        🌊 <strong>Upgrade option:</strong> The <em>La Llorona</em> theatrical show runs at 4 PM at Cuemanco Dock — a haunting DdlM performance on the water. Book in advance via Boletópolis (see Booking section below).</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DAY 3 ═══ -->
+<section class="day-sec" id="day3">
+  <div class="sdiv"></div>
+  <div class="day-head">
+    <div class="chip ch-cyan">🌿 Day 3 · Sunday, November 1</div>
+    <h2 class="day-h2">Recovery Mode<br><em style="color:var(--cyan)">+ Roma ✨</em></h2>
+    <div class="day-tag">a castle, one of the world's great museums, and the city's best neighborhood stroll</div>
+  </div>
+
+  <div class="co co-gold">
+    <div class="co-tag">📅 Nov 1 = Día de Todos Santos</div>
+    <p>One of the two official Día de los Muertos days ✨ The Zócalo ofrenda is still up, Coyoacán is still celebrating — and <strong>Museo Nacional de Antropología is free on Sundays.</strong></p>
+  </div>
+
+  <div class="co co-warn" style="margin-top:8px">
+    <div class="co-tag">⚠️ Early Flight Check!</div>
+    <p>Depending on when you are leaving, compress this day or move Chapultepec to Saturday after the Monument.</p>
+  </div>
+
+
+  <div class="tl">
+    <div class="tb">
+      <div class="tb-l"><div class="tb-time">~9 AM</div><div class="tb-dot" style="border-color:var(--cyan)"></div><div class="tb-line"></div></div>
+      <div class="tb-card">
+        <div class="tb-row"><div class="tb-title"><a href="https://mnh.inah.gob.mx/" target="_blank">Chapultepec Castle</a> 🏰</div><a href="https://maps.google.com/?cid=12024611576922344242" target="_blank" class="mb mb-c">📍 Map</a></div>
+        <div class="tb-body"><strong>Arrive right at opening to beat the line and potential heat.</strong> A real castle on a hill in the middle of a city — the views down Paseo de la Reforma are genuinely stunning. 🏰 Inside: Emperor Maximilian and Carlota's imperial apartments plus an excellent history museum. Allow 90 min. <strong>Closed Mondays.</strong></div>
+      </div>
+    </div>
+    <div class="tb">
+      <div class="tb-l"><div class="tb-time">~11 AM</div><div class="tb-dot" style="border-color:var(--cyan)"></div><div class="tb-line"></div></div>
+      <div class="tb-card">
+        <div class="tb-row"><div class="tb-title">Walk through Chapultepec Park 🌳</div></div>
+        <div class="tb-body">Head downhill through the park — shaded, beautiful, full of families on Sunday mornings. Stop for an <strong>elote</strong> (grilled corn with mayo, cheese, and chili) from a vendor. 🌽 About a 15-min walk to the museum.</div>
+      </div>
+    </div>
+    <div class="tb">
+      <div class="tb-l"><div class="tb-time">~Noon</div><div class="tb-dot" style="border-color:var(--cyan)"></div><div class="tb-line"></div></div>
+      <div class="tb-card">
+        <div class="tb-row"><div class="tb-title"><a href="https://www.mna.inah.gob.mx/" target="_blank">Museo Nacional de Antropología</a> 🗿</div><a href="https://maps.google.com/?cid=9521483601320789284" target="_blank" class="mb mb-c">📍 Map</a></div>
+        <div class="tb-body">One of the great museums in the world. The <strong>Aztec Sun Stone</strong> is bigger and more impressive in person than any photo suggests. Also home to the Crown of Moctezuma. The building is enormous and can be at your own pace. <strong>Free on Sundays!</strong> Arrive early or buy tickets online. Closed Mondays.</div>
+      </div>
+    </div>
+    <div class="tb">
+      <div class="tb-l"><div class="tb-time">~1:30 PM</div><div class="tb-dot" style="border-color:var(--gold)"></div><div class="tb-line"></div></div>
+      <div class="tb-card">
+        <div class="tb-row"><div class="tb-title">Angel de la Independencia </div><a href="https://maps.google.com/?cid=7797541911528484855" target="_blank" class="mb mb-c">📍 Map</a></div>
+        <div class="tb-body">Stroll down Reforma to the golden Angel — the symbolic center of the city. The area is lined with upscale stores and restaurants. Great photo stop 📸 and the natural gateway into Roma and Condesa.</div>
+      </div>
+    </div>
+    <div class="tb">
+      <div class="tb-l"><div class="tb-time">~2 PM</div><div class="tb-dot" style="border-color:var(--gold)"></div><div class="tb-line"></div></div>
+      <div class="tb-card">
+        <div class="tb-row"><div class="tb-title">Lunch in Roma Norte 🍽️</div><a href="https://maps.google.com/?q=El+Parnita+Roma+Norte+Mexico+City" target="_blank" class="mb mb-c">📍 Map</a></div>
+        <div class="tb-body"><strong>El Parnita</strong> — casual, local, perfect Sunday energy. Or <strong>Contramar</strong> for acclaimed fish (arrive right at opening or it's a long wait). Both are excellent. 🐟</div>
+      </div>
+    </div>
+    <div class="tb">
+      <div class="tb-l"><div class="tb-time">~3 PM</div><div class="tb-dot" style="border-color:var(--gold)"></div><div class="tb-line"></div></div>
+      <div class="tb-card">
+        <div class="tb-row"><div class="tb-title">Roma Norte + Condesa Wander 🛍️</div><a href="https://maps.google.com/?q=Avenida+Alvaro+Obregon+Roma+Norte" target="_blank" class="mb mb-c">📍 Map</a></div>
+        <div class="tb-body"><strong>Álvaro Obregón</strong> — the main boulevard of Roma Norte, with a shaded median, art deco buildings, independent boutiques, galleries, and bookshops. Walk south into <strong>Condesa</strong> for tree-lined residential streets and <strong>Parque México.</strong> These neighborhoods are the heart of expat gentrification, but have some of the city's best mezcal bars — sip, dont shoot! 🥂</div>
+      </div>
+    </div>
+    <div class="tb">
+      <div class="tb-l"><div class="tb-time">Evening</div><div class="tb-dot" style="border-color:var(--muted)"></div><div class="tb-line"></div></div>
+      <div class="tb-card">
+        <div class="tb-row"><div class="tb-title">Early Night / Early Flight 🌙</div></div>
+        <div class="tb-body">Budget <strong>60–90 min</strong> to AICM from downtown, more with Sunday traffic. Uber is reliable from this neighborhood. Set two alarms. </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPTIONAL -->
+<section class="opt-sec" id="optional">
+  <div class="sdiv"></div>
+  <div class="sec-h">
+    <div class="sec-label">✨ Optional Swaps</div>
+    <h2 style="font-family:var(--serif);font-size:28px;font-weight:900;color:var(--text)">More Into...? 🤔</h2>
+  </div>
+  <div class="opt-list">
+    <div class="opt-card">
+      <div class="opt-icon">⛪</div>
+      <div class="opt-title">Basílica de Guadalupe</div>
+      <div class="opt-sub">Religious landmark + panoramic city views</div>
+      <div class="opt-body">The most-visited Catholic pilgrimage site in the world after the Vatican — 20 million visitors a year. The miraculous <em>tilma</em> (cloak bearing the Virgin's image) is on display inside. The <strong>Cerro del Tepeyac</strong> behind the basilica has a hilltop chapel and sweeping panoramic views over the entire city — take the escalator up. During DdlM the grounds are covered in ofrendas and marigold carpets. 🌸
+      <br><br>
+      Entry free. Dress modestly (covered shoulders and knees). About 35 min by Uber north of the center. Surrounding area is rough. Best as a morning visit.</div>
+      <span class="opt-tag">Best: morning of Day 3, skip Chapultepec</span>
+    </div>
+    <div class="opt-card">
+      <div class="opt-icon">🏛️</div>
+      <div class="opt-title">Teotihuacán</div>
+      <div class="opt-sub">Pyramids of the Sun &amp; Moon · Full Day Trip</div>
+      <div class="opt-body">The <strong>Pyramid of the Sun is the third-largest pyramid on earth</strong>. The Avenue of the Dead is genuinely awe-inspiring. A bucket-list experience.
+      <br><br>
+      Most organized tours include a stop at an <strong>agave plantation and pulque tasting</strong> along the way, which adds about 1.5 hours and is worth it. Tours run ~$30–60 USD per person. Go early — it's open desert, high altitude sun, no shade.
+      <br><br></div>
+      <span class="opt-tag">Replaces nearly a full day and suggest getting a private driver — plan accordingly</span>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS ACCORDION -->
+<section class="acc-sec" id="notes">
+  <div class="sdiv"></div>
+  <div class="sec-h">
+    <div class="sec-label">💅 Know Before You Go</div>
+    <h2 style="font-family:var(--serif);font-size:28px;font-weight:900;color:var(--text)">Cultural Tips + Safety</h2>
+  </div>
+  <div class="acc-list">
+    <div class="acc-item">
+      <button class="acc-btn" onclick="tog(this)">
+        <div class="acc-bl"><span class="acc-ico">📱</span><span class="acc-title">Phone Safety! 🚨</span></div>
+        <span class="acc-chev">▼</span>
+      </button>
+      <div class="acc-body">
+        <ul>
+          <li><strong>Never leave your phone on a restaurant table</strong> — snatch-and-run is the most common tourist theft in CDMX.</li>
+          <li>This is why so many of the best restaurants have seating on upper floors or interior patios — it's deliberate design to protect customers.</li>
+          <li>While in public keep it in a front pocket or bag. Take it out, use it, put it away. Same goes for cameras and sunglasses.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="acc-item">
+      <button class="acc-btn" onclick="tog(this)">
+        <div class="acc-bl"><span class="acc-ico">🚨</span><span class="acc-title">Earthquakes — What to Know</span></div>
+        <span class="acc-chev">▼</span>
+      </button>
+      <div class="acc-body">
+        <ul>
+          <li>CDMX has a public early warning system (SASMEX) — a loud siren gives you ~60–90 sec before shaking. If you hear it: <strong>calmly exit and move to open space.</strong></li>
+          <li>Look for <strong>green "Punto de Reunión" signs on building exteriors</strong> near your hotel and the places you visit. Those are the city's designated earthquake assembly points. Note where they are when you arrive somewhere new.</li>
+          <li>Most quakes are minor and brief. Locals won't panic and neither should you 🤙</li>
+        </ul>
+      </div>
+    </div>
+    <div class="acc-item">
+      <button class="acc-btn" onclick="tog(this)">
+        <div class="acc-bl"><span class="acc-ico">💀</span><span class="acc-title">Día de los Muertos — The Real Story</span></div>
+        <span class="acc-chev">▼</span>
+      </button>
+      <div class="acc-body">
+        <ul>
+          <li><strong>Not Halloween.</strong> A sacred pre-Columbian tradition about souls of the dead returning to visit the living. It's a celebration, not mourning — eat, drink, and enjoy it. 🌺</li>
+          <li>Key ofrenda items: cempasúchil (marigolds) to guide the spirits, a photo of the deceased, their favorite food, candles, and copal incense.</li>
+          <li>If you see a family ofrenda on the street, ask before photographing — most people are happy to explain it.</li>
+          <li>Face painting as a Catrina is fully welcomed. The Catrina figure was created by Mexican artist José Guadalupe Posada.</li>
+          <li>Must-eat this season: <em>pan de muerto</em> (sweet marigold bread, only available now), sugar skulls, tamales, atole (a warm masa drink). 🍞</li>
+        </ul>
+      </div>
+    </div>
+    <div class="acc-item">
+      <button class="acc-btn" onclick="tog(this)">
+        <div class="acc-bl"><span class="acc-ico">🚇</span><span class="acc-title">Getting Around</span></div>
+        <span class="acc-chev">▼</span>
+      </button>
+      <div class="acc-body">
+        <ul>
+          <li><strong>Uber:</strong> Works reliably throughout CDMX, but often need to find WiFi to book. Best for nights, longer distances, and the airport return on Nov 2.</li>
+          <li><strong>Airport arrival = Suggest Sitio 300 authorized taxi.</strong> Establish price upfront inside the terminal before going outside.</li>
+          <li><strong>Metro:</strong> ~5 MXN per ride. Lines 1–3 cover most tourist areas. Allegedly "fine" during the day; skip during rush hour and late at night.</li>
+          <li><strong>Street taxis:</strong> Official metered taxis only. Never get in an unmarked car that approaches you.</li>
+          <li>Traffic can be intense — always build in extra time for afternoon and evening rides.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="acc-item">
+      <button class="acc-btn" onclick="tog(this)">
+        <div class="acc-bl"><span class="acc-ico">⛰️</span><span class="acc-title">Altitude + Food + Drinking</span></div>
+        <span class="acc-chev">▼</span>
+      </button>
+      <div class="acc-body">
+        <ul>
+          <li>CDMX sits at 2,240m (7,350 ft). Expect quicker fatigue and alcohol hitting faster than usual on Day 1. Drink plenty of water. 💧</li>
+          <li>Stick to bottled water. Street food cooked hot in front of you is generally safe.</li>
+          <li>Breakfast is the main meal here — chilaquiles, huevos rancheros, tamales, atole.</li>
+          <li>A queue of locals at a taco cart is your quality signal. Tip 10–15% at sit-down restaurants if you feel the service was good.</li>
+          <li>Must try: tacos al pastor, tlayudas, pozole, and mezcal de agave espadín. 🥃</li>
+        </ul>
+      </div>
+    </div>
+    <div class="acc-item">
+      <button class="acc-btn" onclick="tog(this)">
+        <div class="acc-bl"><span class="acc-ico">🗣️</span><span class="acc-title">Spanish You'll Actually Use</span></div>
+        <span class="acc-chev">▼</span>
+      </button>
+      <div class="acc-body">
+        <div class="phrases">
+          <div class="phrase"><span class="ph-es">¿Cuánto cuesta?</span><span class="ph-en">How much?</span></div>
+          <div class="phrase"><span class="ph-es">Una más, por favor</span><span class="ph-en">One more, please 🙏</span></div>
+          <div class="phrase"><span class="ph-es">La cuenta, por favor</span><span class="ph-en">The bill, please</span></div>
+          <div class="phrase"><span class="ph-es">¿Dónde está el baño?</span><span class="ph-en">Where's the bathroom?</span></div>
+          <div class="phrase"><span class="ph-es">Con todo, sin picante</span><span class="ph-en">Everything on it, no spice</span></div>
+          <div class="phrase"><span class="ph-es">No hablo español bien</span><span class="ph-en">I don't speak Spanish well</span></div>
+          <div class="phrase"><span class="ph-es">Salud 🥂</span><span class="ph-en">Cheers / Bless you</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="bk-sec" id="booking">
+  <div class="sdiv"></div>
+  <div class="sec-h">
+    <div class="sec-label">🎟️ Book It</div>
+    <h2 style="font-family:var(--serif);font-size:28px;font-weight:900;color:var(--text)">Transfers &amp; Tickets</h2>
+  </div>
+  <div class="bk-list">
+    <a href="https://www.aicm.com.mx/en/passengers/services/service-providers/transportation/taxis" target="_blank" class="bk-card">
+      <div class="bk-ico bi-o">✈️</div>
+      <div class="bk-info">
+        <div class="bk-title">Airport Taxi — Sitio 300 (AICM)</div>
+        <div class="bk-desc">Authorized only. Pay at the counter inside before exiting. Non-negotiable on arrival night.</div>
+      </div>
+      <div class="bk-arr">↗</div>
+    </a>
+    <a href="https://m.uber.com" target="_blank" class="bk-card">
+      <div class="bk-ico bi-p">🚗</div>
+      <div class="bk-info">
+        <div class="bk-title">Uber — All Other Rides + Airport Return</div>
+        <div class="bk-desc">Works great throughout CDMX. Best for evening trips, Xochimilco, and your Nov 2 airport run.</div>
+      </div>
+      <div class="bk-arr">↗</div>
+    </a>
+    <a href="https://www.museofridakahlo.org.mx/" target="_blank" class="bk-card">
+      <div class="bk-ico bi-p">🎨</div>
+      <div class="bk-info">
+        <div class="bk-title">Frida Kahlo Museum — La Casa Azul</div>
+        <div class="bk-desc">Buy online NOW — sells out weeks ahead during DdlM. Coyoacán, 10 min walk from the plaza.</div>
+      </div>
+      <div class="bk-arr">↗</div>
+    </a>
+    <a href="https://www.inah.gob.mx/zonas/145-museo-casa-de-leon-trotsky" target="_blank" class="bk-card">
+      <div class="bk-ico bi-pu">🔴</div>
+      <div class="bk-info">
+        <div class="bk-title">Casa Museo León Trotsky</div>
+        <div class="bk-desc">Cold War history in Coyoacán. Bullet holes still in the walls. Less crowded than Frida, equally wild.</div>
+      </div>
+      <div class="bk-arr">↗</div>
+    </a>
+    <a href="https://www.boletopolis.com.mx/" target="_blank" class="bk-card">
+      <div class="bk-ico bi-c">🌊</div>
+      <div class="bk-info">
+        <div class="bk-title">La Llorona — Xochimilco Canal Show</div>
+        <div class="bk-desc">Theatrical DdlM boat performance at Cuemanco Dock. ~4 PM shows. Sells out — book ASAP on Boletópolis.</div>
+      </div>
+      <div class="bk-arr">↗</div>
+    </a>
+    <a href="https://www.trajinerasxochimilco.com.mx/" target="_blank" class="bk-card">
+      <div class="bk-ico bi-c">🛶</div>
+      <div class="bk-info">
+        <div class="bk-title">Trajineras Xochimilco</div>
+        <div class="bk-desc">Or just negotiate at Fernando Celada / Nativitas docks directly. 300–500 MXN/hr per boat.</div>
+      </div>
+      <div class="bk-arr">↗</div>
+    </a>
+    <a href="https://www.templomayor.inah.gob.mx/" target="_blank" class="bk-card">
+      <div class="bk-ico bi-o">⚔️</div>
+      <div class="bk-info">
+        <div class="bk-title">Templo Mayor — Tickets</div>
+        <div class="bk-desc">The excavated Aztec temple ruins at the Zócalo. Can buy on arrival but worth checking online.</div>
+      </div>
+      <div class="bk-arr">↗</div>
+    </a>
+  </div>
+</section>
+
+<!-- LODGING -->
+<section class="lodge-sec" id="lodging">
+  <div class="sdiv"></div>
+  <div class="sec-h">
+    <div class="sec-label">🛏️ Where to Stay</div>
+    <h2 style="font-family:var(--serif);font-size:28px;font-weight:900;color:var(--text)">Lodging</h2>
+  </div>
+  <div class="lodge-list">
+
+    <div class="lodge-card" style="border-color:rgba(255,208,0,.2)">
+      <div class="lodge-tag lt-rec">⭐ Personal Recommendation</div>
+      <div class="lodge-name">Hotel Krystal Grand Insurgentes</div>
+      <div class="lodge-addr">📍 Av. Insurgentes Centro 1991, Guadalupe Inn, Álvaro Obregón · Mexico City</div>
+      <div class="lodge-body">A solid, nice hotel on one of the city's main arteries, though I see price has quadroupled for the weekend you are there! — Insurgentes is an avenue that runs the entire north–south length of CDMX, so you're well-placed for getting anywhere by Uber. Guadalupe Inn sits between the historic center and the Roma/Condesa neighborhoods, which is a genuinely good position for this itinerary. <strong>Stayed here, can vouch for it.</strong> Also hotel front desk was great for getting us private driver to Teotihuacan and will be glad to assist with tourist trips</div>
+      <a href="https://maps.google.com/?q=Hotel+Krystal+Grand+Insurgentes+1991+Mexico+City" target="_blank" class="lodge-map lm-gold">📍 View on Maps ↗</a>
+    </div>
+
+    <div class="lodge-card" style="border-color:rgba(192,119,255,.15)">
+      <div class="lodge-tag lt-alt">🏠 Airbnb Option</div>
+      <div class="lodge-name">Roma Norte or Condesa</div>
+      <div class="lodge-addr">📍 Cuauhtémoc borough, Mexico City</div>
+      <div class="lodge-body">Roma Norte and Condesa are where the gentrified, well-located Airbnbs are. Both neighborhoods are walkable, safe for tourists, and have the best concentration of restaurants, cafés, and mezcal bars in the city. Staying here puts you right in the middle of Day 3's itinerary and gives you easy Uber access everywhere else. <strong>Worth the Airbnb premium</strong> if you want a more neighborhood feel over a hotel.
+      <br><br>
+      Note that Coyoacán (the Day 1 neighborhood) is further south — if your hotel is in Roma/Condesa, it's a 15–20 min Uber to Coyoacán, which is no problem.</div>
+      <a href="https://maps.google.com/?q=Roma+Norte+Mexico+City" target="_blank" class="lodge-map lm-pu">📍 Roma Norte on Maps ↗</a>
+    </div>
+
+  </div>
+</section>
+
+
+  <div class="papel" style="margin-bottom:24px;border-radius:3px"></div>
+  <div class="ft-title">Buen viaje, Lindsay y Amigas! 🌺💕</div>
+  <div class="ft-sub">You're going at the perfect time!.</div>
+</footer>
+
+<script>
+const ids = ['events','day1','day2','day3','optional','notes','lodging','booking'];
+const nas = document.querySelectorAll('.na');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      nas.forEach(a => a.classList.remove('on'));
+      const a = document.querySelector(`.na[href="#${e.target.id}"]`);
+      if (a) { a.classList.add('on'); a.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'}); }
+    }
+  });
+}, {threshold: 0.25, rootMargin: '-5% 0px -55% 0px'});
+ids.forEach(id => { const el = document.getElementById(id); if(el) obs.observe(el); });
+function tog(btn) { btn.closest('.acc-item').classList.toggle('open'); }
+</script>
+</body>
+</html>
